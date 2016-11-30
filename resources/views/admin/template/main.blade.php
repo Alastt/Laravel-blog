@@ -27,13 +27,9 @@
 
     @include('admin.template.partials.nav')
 
-    <section class="col-md-6 col-md-offset-3">
-        @yield('content')
-    </section>
+    @include('admin.template.partials.panel_h')
 
     @include('admin.template.partials.footer')
-
-        @yield('footer')
 
 </body>
 </html>
