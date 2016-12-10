@@ -1,3 +1,6 @@
+<style type="text/css">
+    body { padding-bottom: 600px; }
+</style>
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <p class="navbar-text pull-left">© 2016 - Construido por Gio Martínez

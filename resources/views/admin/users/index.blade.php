@@ -30,7 +30,8 @@
                         @endif
 
                     </td>
-                    <td><a href="" class="btn btn-danger glyphicon glyphicon-remove"></a> <a href="" class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
+                    <td><a href="{{ route('users.destroy', $user->id) }}" onclick="return confirm('¿Seguro que desea eliminarlo?')" class="btn btn-danger glyphicon glyphicon-remove"></a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
                 </tr>
                 @endforeach
         </tbody>
