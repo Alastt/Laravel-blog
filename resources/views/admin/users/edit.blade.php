@@ -18,7 +18,7 @@
 
     <div class="form-group">
         {!! Form::label('type', 'Tipo') !!}
-        {!! Form::select('type', ['' => 'Seleccione un tipo...', 'admin' => 'Administrador','member' => 'Miembro' ], null, ['class' => 'form-control', 'required']) !!}
+        {!! Form::select('type', ['admin' => 'Administrador','member' => 'Miembro' ], $user->type, ['class' => 'form-control', 'required']) !!}
     </div>
 
     {!! Form::token() !!}
@@ -26,7 +26,6 @@
     <div class="form-group">
         {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
     </div>
-
 
     {!! Form::close() !!}
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\UserRequest;
 
 class UsersController extends Controller
 {
@@ -21,7 +22,7 @@ class UsersController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(UserRequest $request){
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
         $user->save();
@@ -41,7 +42,7 @@ class UsersController extends Controller
 
     }
 
-    public function update(Request $request, $id){
+    public function update(UserRequest $request, $id){
         $user = User::Find($id);
         $user -> name = $request -> name;
         $user -> email = $request -> email;
