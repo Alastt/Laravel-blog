@@ -15,18 +15,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function(){
+Route::get('/home', function () {
+    return view('welcome');
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::resource('users', 'UsersController');
     Route::resource('categories', 'CategoriesController');
+    Route::get('users/{id}/destroy', [
+        'uses' => 'UsersController@destroy',
+        'as' => 'users.destroy'
+    ]);
+    Route::get('categories/{id}/destroy', [
+        'uses' => 'CategoriesController@destroy',
+        'as' => 'categories.destroy'
+    ]);
 
 });
 
-Route::get('users/{id}/destroy', [
-    'uses' => 'UsersController@destroy',
-    'as' => 'users.destroy'
+Route::get('admin/auth/login', [
+    'uses' => 'Auth\AuthController@getLogin',
+    'as' => 'auth.login'
 ]);
-Route::get('categories/{id}/destroy', [
-    'uses' => 'CategoriesController@destroy',
-    'as' => 'categories.destroy'
+Route::post('admin/auth/login', [
+    'uses' => 'Auth\AuthController@postLogin',
+    'as' => 'auth.login'
 ]);
+Route::get('admin/auth/logout', [
+    'uses' => 'Auth\AuthController@logout',
+    'as' => 'auth.logout'
+]);
+
