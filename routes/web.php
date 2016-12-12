@@ -19,18 +19,31 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('admin.auth.login');
+});
+
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::resource('users', 'UsersController');
-    Route::resource('categories', 'CategoriesController');
     Route::get('users/{id}/destroy', [
         'uses' => 'UsersController@destroy',
         'as' => 'users.destroy'
     ]);
+
+    Route::resource('categories', 'CategoriesController');
     Route::get('categories/{id}/destroy', [
         'uses' => 'CategoriesController@destroy',
         'as' => 'categories.destroy'
     ]);
+
+    Route::resource('tags', 'TagsController');
+    Route::get('tags/{id}/destroy', [
+        'uses' => 'TagsController@destroy',
+        'as' => 'tags.destroy'
+    ]);
+
 
 });
 

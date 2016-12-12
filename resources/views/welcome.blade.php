@@ -4,9 +4,9 @@
 
 @section('content2')
 
-    <h1>Hola esto es Bootstrap</h1>
+    <h1>Hola! esto es una tienda online en proceso.</h1>
     <hr>
-    <a href="" class="btn btn-success">Soy un boton de Bootstrap</a>
+    <a href="" class="btn btn-success">Alast Shop</a>
 
 @endsection
 

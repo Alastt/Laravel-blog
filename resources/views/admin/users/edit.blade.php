@@ -1,27 +1,25 @@
 @extends('admin.template.main')
 
-@section('title', 'Editar Usuario: ' . $user->name)
+@section('title', 'Editar Usuario: ' . $user -> name)
 
 @section('content2')
 
-    {!! Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) !!}
+    {!! Form::model($user,['route' => ['users.update', $user->id], 'method' => 'PUT']) !!}
 
     <div class="form-group">
         {!! Form::label('name', 'Nombre') !!}
-        {!! Form::text('name', $user->name, ['class' => 'form-control', 'required']) !!}
+        {!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nombre completo', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('email', 'Correo Electronico') !!}
-        {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'example@example.com', 'required']) !!}
+        {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'user@correo.com', 'required']) !!}
     </div>
 
     <div class="form-group">
         {!! Form::label('type', 'Tipo') !!}
-        {!! Form::select('type', ['admin' => 'Administrador','member' => 'Miembro' ], $user->type, ['class' => 'form-control', 'required']) !!}
+        {!! Form::select('type', ['member' => 'Miembro', 'admin' => 'Administrador'], null, ['class' => 'form-control']) !!}
     </div>
-
-    {!! Form::token() !!}
 
     <div class="form-group">
         {!! Form::submit('Editar', ['class' => 'btn btn-primary']) !!}
@@ -30,5 +28,3 @@
     {!! Form::close() !!}
 
 @endsection
-
-@section('footer')

@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=""><img src="/images/AnimalsMosquito.png" height="50px" width="50px"></a>
+            <a class="navbar-brand" href="{{ asset('home') }}"><img src="/images/AnimalsMosquito.png" height="50px" width="50px"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,7 +22,7 @@
                 <li><a href="{{ route('categories.index') }}">Categorias</a></li>
                 <li><a href="#">Articulos</a></li>
                 <li><a href="#">Imagenes</a></li>
-                <li><a href="#">Tags</a></li>
+                <li><a href="{{ route('tags.index') }}">Tags</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <div class="form-group">

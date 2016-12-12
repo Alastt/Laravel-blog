@@ -4,6 +4,8 @@
 
 @section('content2')
 
+    @include('admin.template.partials.errors')
+
     {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
 
         <div class="form-group">
