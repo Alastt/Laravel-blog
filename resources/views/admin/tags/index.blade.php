@@ -5,9 +5,15 @@
 @section('content2')
 
     <a href="{{ route('tags.create') }}" class="btn btn-info">Registrar Nuevo Tag</a>
-
+    <!-- Buscador de Tags -->
+    {!! Form::open(['route' => 'tags.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
+    <div class="form-group input-group">
+        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscar Tag...', 'aria-describedby' => 'search']) !!}
+        <span class="input-group-addon btn" id="search"><span class=" glyphicon glyphicon-search"></span></span>
+    </div>
+    {!! Form::close() !!}
+    <!-- Fin de buscador -->
     <hr>
-
     <table class="table table-hover table-responsive">
         <thead>
         <th>ID</th>
