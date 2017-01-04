@@ -8,6 +8,7 @@ use App\Tag;
 use App\Article;
 use App\Image;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\ArticleRequest;
 class ArticlesController extends Controller
 {
     public function index(){
@@ -26,7 +27,7 @@ class ArticlesController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(ArticleRequest $request){
 
         //Manipulación de imágenes.
         if ($request->file('image')){
@@ -35,7 +36,7 @@ class ArticlesController extends Controller
         $path = public_path() . '/images/articles/';
         $file -> move($path, $name);
         }
-
+        //
         $article = new Article($request->all());
         $article -> user_id = \Auth::user()->id;
         $article->save();
