@@ -20,7 +20,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('users.index') }}">Usuarios</a></li>
                 <li><a href="{{ route('categories.index') }}">Categorias</a></li>
-                <li><a href="#">Articulos</a></li>
+                <li><a href="{{ route('articles.index') }}">Articulos</a></li>
                 <li><a href="#">Imagenes</a></li>
                 <li><a href="{{ route('tags.index') }}">Tags</a></li>
             </ul>

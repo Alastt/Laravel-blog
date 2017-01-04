@@ -44,6 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'as' => 'tags.destroy'
     ]);
 
+    Route::resource('articles', 'ArticlesController');
 
 });
 
