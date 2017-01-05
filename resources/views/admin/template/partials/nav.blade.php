@@ -21,7 +21,7 @@
                 <li><a href="{{ route('users.index') }}">Usuarios</a></li>
                 <li><a href="{{ route('categories.index') }}">Categorias</a></li>
                 <li><a href="{{ route('articles.index') }}">Articulos</a></li>
-                <li><a href="#">Imagenes</a></li>
+                <li><a href="{{ route('images.index') }}">Imagenes</a></li>
                 <li><a href="{{ route('tags.index') }}">Tags</a></li>
             </ul>
             <form class="navbar-form navbar-right">
