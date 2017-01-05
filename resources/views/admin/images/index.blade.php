@@ -17,6 +17,7 @@
             </div>
             @endforeach
     </div>
+    {!! $images -> render() !!}
 @endsection
 
 @section('footer')

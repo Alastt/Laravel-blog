@@ -7,7 +7,7 @@ use App\Image;
 class ImagesController extends Controller
 {
     public function index(){
-        $images = Image::orderBy('id', 'DESC');
+        $images = Image::orderBy('id', 'DESC')->paginate(6);
         $images->each(function ($images){
             $images->article;
         });
