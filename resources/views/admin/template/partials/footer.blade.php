@@ -1,5 +1,5 @@
 <style type="text/css">
-    body { padding-bottom: 600px; }
+    body { padding-bottom: 800px; }
 </style>
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
